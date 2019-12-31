@@ -163,6 +163,24 @@ public class SchemaConverter {
         return createListTypeMapping();
       }
 
+      @Override
+      public TypeMapping visit(ArrowType.Map map) {
+        //TODO
+        return null;
+      }
+
+      @Override
+      public TypeMapping visit(ArrowType.Duration duration) {
+        //TODO
+        return null;
+      }
+
+      @Override
+      public TypeMapping visit(ArrowType.ExtensionType type) {
+        //TODO
+        return null;
+      }
+
       private ListTypeMapping createListTypeMapping() {
         if (children.size() != 1) {
           throw new IllegalArgumentException("list fields must have exactly one child: " + field);
@@ -610,6 +628,24 @@ public class SchemaConverter {
       @Override
       public TypeMapping visit(org.apache.arrow.vector.types.pojo.ArrowType.FixedSizeList type) {
         return createListTypeMapping(type);
+      }
+
+      @Override
+      public TypeMapping visit(ArrowType.Map map) {
+        //TODO
+        return null;
+      }
+
+      @Override
+      public TypeMapping visit(ArrowType.Duration duration) {
+        //TODO
+        return null;
+      }
+
+      @Override
+      public TypeMapping visit(ArrowType.ExtensionType type) {
+        //TODO
+        return null;
       }
 
       private TypeMapping createListTypeMapping(ArrowType.ComplexType type) {
